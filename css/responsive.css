@@ -1,0 +1,84 @@
+/* ============================================================
+   Signature Events Co. — responsive.css  (stylesheet 2 of 2)
+   Mobile-first enhancement layer: min-width media queries only.
+   Base (mobile) styles live in style.css.
+   Breakpoints:  40rem / 640px  → tablet
+                 56rem / 896px  → desktop
+   ============================================================ */
+
+/* ---------- Tablet: 640px and up ---------- */
+@media (min-width: 40rem) {
+  .grid-2 { grid-template-columns: repeat(2, 1fr); }
+  .grid-3 { grid-template-columns: repeat(2, 1fr); }
+
+  .gallery-grid { grid-template-columns: repeat(3, 1fr); }
+
+  .card-panel { padding: var(--space-4); }
+
+  .hero-actions { gap: var(--space-2); }
+
+  .footer-grid { grid-template-columns: repeat(3, 1fr); }
+
+  .contact-grid {
+    grid-template-columns: 1.2fr 1fr;
+    align-items: start;
+  }
+}
+
+/* ---------- Desktop: 896px and up ---------- */
+@media (min-width: 56rem) {
+  /* Navigation becomes a permanent horizontal bar */
+  .nav-toggle { display: none; }
+
+  .site-nav {
+    display: block;
+    padding-bottom: 0;
+  }
+
+  .site-nav ul {
+    display: flex;
+    gap: 0.4rem;
+  }
+
+  .site-nav a {
+    padding: 0.55rem 0.85rem;
+    border-bottom: 2px solid transparent;
+    font-size: 0.95rem;
+  }
+
+  .site-nav a:hover { padding-left: 0.85rem; }
+
+  .site-nav a[aria-current="page"] {
+    border-bottom-color: var(--foil);
+  }
+
+  /* Hero: copy left, illustration right */
+  .hero-grid {
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: var(--space-4);
+  }
+
+  .grid-3 { grid-template-columns: repeat(3, 1fr); }
+
+  .gallery-grid { grid-template-columns: repeat(4, 1fr); }
+
+  .split { grid-template-columns: 0.9fr 1.1fr; }
+
+  /* CSS3 multi-column: About page values copy flows in two columns */
+  .values-copy {
+    column-count: 2;          /* CSS3: multi-column */
+    column-gap: var(--space-4);
+    column-rule: 1px solid var(--line);
+  }
+
+  .values-copy p { break-inside: avoid; }
+
+  .section { padding-block: var(--space-5); }
+}
+
+/* ---------- Wide screens: give the lightbox arrows room ---------- */
+@media (min-width: 72rem) {
+  .lightbox-prev { left: -3.4rem; }
+  .lightbox-next { right: -3.4rem; }
+  .lightbox-close { right: -3.4rem; top: -0.5rem; }
+}
